@@ -61,7 +61,7 @@ namespace Task9
             try
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(filename);
-                FileInfo[] info = dirInfo.GetFiles("*.dll*", SearchOption.AllDirectories);
+                FileInfo[] info = dirInfo.GetFiles("*.dll*", SearchOption.TopDirectoryOnly);
                 foreach (var fileName in info)
                 {
                     listViewOfDll.Items.Add(fileName);
