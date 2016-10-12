@@ -25,7 +25,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="listViewOfMethods" HorizontalAlignment="Left" Height="133" Margin="378,100,0,0" VerticalAlignment="Top" Width="180" SelectionMode="Single">
+        <ListView x:Name="listViewOfMethods" HorizontalAlignment="Left" Height="133" Margin="378,100,0,0" VerticalAlignment="Top" Width="180" SelectionMode="Single" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

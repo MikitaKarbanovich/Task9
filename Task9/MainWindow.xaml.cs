@@ -47,9 +47,7 @@ namespace Task9
                 lblSelectedFolder.Text = fbd.SelectedPath;
                 listViewOfDll.Items.Clear();
                 listViewOfTypes.Items.Clear();
-                listViewOfMethods.Items.Clear();
-                listViewOfProperties.Items.Clear();
-                listViewOfFields.Items.Clear();
+                ClearMethodsPropertiesFields();
                 Selectfolders(fbd.SelectedPath);
             }
         }
@@ -78,9 +76,7 @@ namespace Task9
         private void ListViewOfDllSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             listViewOfTypes.Items.Clear();
-            listViewOfMethods.Items.Clear();
-            listViewOfProperties.Items.Clear();
-            listViewOfFields.Items.Clear();
+            ClearMethodsPropertiesFields();
             var selectedItem = listViewOfDll.SelectedItem;
             try
             {
@@ -115,9 +111,7 @@ namespace Task9
                 var methods = WorkWithFile.GetMethods((Type)listViewOfTypes.SelectedItem);
                 var properties = WorkWithFile.GetProperties((Type)listViewOfTypes.SelectedItem);
                 var fields = WorkWithFile.GetFields((Type)listViewOfTypes.SelectedItem);
-                listViewOfMethods.Items.Clear();
-                listViewOfProperties.Items.Clear();
-                listViewOfFields.Items.Clear();
+                ClearMethodsPropertiesFields();
                 if (showMode == ShowMode.Methods || showMode == ShowMode.All)
                 {
                     foreach (var method in methods)
@@ -167,6 +161,12 @@ namespace Task9
         private void RbShowAllChecked(object sender, RoutedEventArgs e)
         {
             showMode = ShowMode.All;
+        }
+        public void ClearMethodsPropertiesFields()
+        {
+            listViewOfMethods.Items.Clear();
+            listViewOfProperties.Items.Clear();
+            listViewOfFields.Items.Clear();
         }
     }
 }
